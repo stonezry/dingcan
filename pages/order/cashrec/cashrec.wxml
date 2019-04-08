@@ -1,0 +1,29 @@
+<view>
+  <view class='top-head'>
+    <image class='head_img' src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2541662397.jpg" />
+    <view class='head_txt'>五谷渔粉</view>
+  </view>
+
+  <view class='out-frame'>
+
+    <view class='money'>
+      <input placeholder='消费金额' class='money-text'></input>
+      <label style='font-size:12px;margin-right:10px;'>询问店员后输入</label>
+    </view>
+
+  </view>
+
+  <view>
+    <i class="iconfont icon-tianjia plus-icon"></i>优惠券
+  </view>
+  <!-- 底部操作菜单 -->
+  <view class="operate-bar">
+    <view class='zongji'>
+      <view>¥ 20.00</view>
+    </view>
+    <view class="submit-btn">
+      支付
+    </view>
+  </view>
+
+</view>

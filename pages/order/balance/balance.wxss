@@ -1,0 +1,119 @@
+/* pages/order/balance/balance.wxss */
+page{
+  background: #F8F8F8
+}
+.operate-bar{
+  z-index: 1001; 
+  position: fixed;
+  bottom: 0px;
+  height:50px;
+  width:100%;
+  display: flex;
+}
+
+.submit-btn{
+  background:#FF9C35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  font-size:15px;
+  flex: 1;
+}
+.activity-color{
+  color:#FF9C35;
+}
+
+.activity-color-bg{
+  background:#FF9C35;
+}
+
+.cart-list-box{
+  background:#FFFFFF;
+  display:flex;
+  align-items: center;
+  font-size:15px;
+  border-bottom:1px #E3E3E3 solid;
+}
+.list-info{
+  font-size:14px;
+  width:60%;
+  padding:5px 15px;
+}
+.list-info-size{
+  font-size:12px;
+  color:#B1B1B1;
+}
+.icon-li-circle{
+  margin-left:15px;
+  font-size:20px
+}
+.font20{
+  font-size:20px
+}
+.top-bar{
+  height:30px;
+  font-size:14px;
+  background: white;
+}
+.top-left-label{
+  float:left;
+  padding:5px;
+  margin-left:10px;
+}
+.top-right-label{
+  float:right;
+  font-size:13px;
+  padding:5px 15px 5px 5px;
+}
+.order-info{
+  background: white;
+  margin-top:10px;
+}
+.order-info-title{
+  font-size:12px;
+  color: #D1D1D1;
+  padding: 12px;
+  border-bottom: 1px #E3E3E3 solid
+}
+.order-cut{
+  height:30px;
+  padding:15px 5px 5px 15px;
+  border-bottom: 20px #E3E3E3 solid;
+}
+.order-cut-dec{
+  background:#F07474;
+  font-size:13px;
+  color:white;
+  padding:2px
+}
+.order-cut-note{
+  margin-left:3px;
+  font-size:14px
+}
+.order-cut-number{
+  font-size:14px;
+  padding-right: 15px;
+  float:right;
+}
+.order-sum{
+  height:30px;
+  padding:15px 15px 5px 15px;
+  font-size:14px;
+}
+.order-sum-number{
+  font-size:16px;
+  float:right;
+}
+.note{
+  padding:5px 15px;
+  background:white;
+  margin-top:10px
+}
+.note-text{
+  width:95%;
+  font-size:12px;
+  background:#F2F2F2;
+  padding:10px;
+  height:80px;
+}

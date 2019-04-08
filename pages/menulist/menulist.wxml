@@ -1,0 +1,97 @@
+<view>
+  <!-- 左侧菜单 -->
+  <scroll-view scroll-y="true" class="list-left-menu">
+    <view wx:for="{{listData}}" wx:key="unique" class="{{index==activeIndex?'list-left-menu-box-selected':'list-left-menu-box-unselect'}}" data-index="{{index}}" bindtap='selectMenu'>
+      <view class="list-menu-name">{{item.name}}</view>
+    </view>
+  </scroll-view>
+
+  <!-- 右侧菜单 -->
+  <view wx:if='{{listData && listData.length > 0}}' class='list-tab'>{{listData[activeIndex].name}}</view>
+  <scroll-view wx:if='{{listData && listData.length > 0}}' scroll-y="true" class='list-right-menu'>
+    <view class='content-list' wx:for="{{listData[activeIndex].foods}}" wx:key="unique">
+
+      <image class="list-image" mode="aspectFill" src='{{item.image_url}}'></image>
+
+      <view class='issue-name'>
+        <view>{{item.name}}</view>
+        <view class='issue-name'>
+          <text class='list-price'>¥ {{item.specfoods[0].price}}</text>
+          <view class='list_control'>
+            <i class="iconfont icon-jianqu plus-icon" data-type="{{activeIndex}}" data-index="{{index}}" bindtap="reduce"></i>
+            {{cartList[item.item_id]?cartList[item.item_id].number:0}}
+            <i class="iconfont icon-tianjia plus-icon" data-type="{{activeIndex}}" data-index="{{index}}" bindtap="add"></i>
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 底部操作菜单 -->
+  <view class="operate-bar" wx:if="{{loading}}">
+    <view class='gouwuche'>
+      <view style='padding:5px;display:flex'>
+        <i class="iconfont icon-ziyuan gouwuche-icon {{sumMonney!=0?'activity-color':'' }}" bindtap="showCartList">
+          <span class="number-msg" wx:if="{{cupNumber!=0}}">{{cupNumber}}</span>
+        </i>
+
+        <view class='gouwuche-price' wx:if="{{sumMonney==0}}">购物车是空的</view>
+        <view class='gouwuche-price' style='color:white;font-size:18px' wx:if="{{sumMonney!=0}}">¥ {{sumMonney-man_jian+canhefei+peisongfei}}</view>
+      </view>
+    </view>
+    <view class="submit-btn {{sumMonney!=0?'activity-color-bg':'' }}" bindtap='goBalance'>
+      <view class="submit-btn-label color-white">选好了</view>
+    </view>
+  </view>
+</view>
+
+<!-- 购物车 -->
+<view class="drawer_screen" bindtap="showCartList" wx:if="{{showCart}}"></view>
+<view class="cartlist-float" wx:if="{{showCart}}">
+<!-- 优惠宣传条 -->
+
+<view class='cut-bar' wx:if="{{sumMonney<= discount_max && sumMonney!=0}}">
+  <label>满¥{{discount_max}}立减¥{{discount_money}},还差¥{{discount_max-sumMonney}}></label>
+</view>
+  
+  <view style='background:#F0F0F0;height:30px;'>
+    <label class='label-cart-bar'>
+      已选商品
+    </label>
+    <label class='icon-clear' bindtap='clearCartList'>
+      <i class="iconfont icon-lajitong"></i>
+      <label class="label-clear">清空购物车</label>
+    </label>
+  </view>
+  <scroll-view scroll-y="true" class="{{cartList.length>5?'cart-scroll-list':''}}">
+
+    <view class='cart-list-box' wx:for="{{cartList}}" wx:for-index="key"  wx:for-item="item" wx:key="unique" style='border-bottom:1px #E3E3E3 solid'>
+      <view class='list-info'>
+        <view>{{item.name}}</view>
+        <view class='list-info-size' wx:if='{{item.detail}}'>{{item.detail}}</view>
+      </view>
+      <view style='width:50%;padding:10px;'>
+        <view style='float:right'>
+          <label class='activity-color' style='margin-right:20rpx;' >¥ {{item.sum}}</label>
+          <i class="iconfont icon-jianqu plus-icon" data-key="{{key}}" bindtap="decNumber"></i>
+          {{item.number}}
+          <i class="iconfont icon-tianjia plus-icon" data-key="{{key}}" bindtap="addNumber"></i>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='cart-list-box' wx:if='{{man_jian != 0}}'>
+        <view style='width:50%;padding:5px 15px;;color:red;'>满减</view>
+        <label class='activity-color' style='width:50%;padding:10px;' >¥ {{man_jian}}</label>
+  </view>
+  <view class='cart-list-box' wx:if='{{canhefei != 0}}'>
+        <view style='width:50%;padding:5px 15px;;color:red;'>餐盒费</view>
+        <label class='activity-color' style='width:50%;padding:10px;' >¥ {{canhefei}}</label>
+  </view>
+  <view class='cart-list-box' wx:if='{{peisongfei != 0}}'>
+        <view style='width:50%;padding:5px 15px;;color:red;'>配送费</view>
+        <label class='activity-color' style='width:50%;padding:10px;' >¥ {{peisongfei}}</label>
+  </view>
+</view>

@@ -1,0 +1,242 @@
+/* 两列列表样式 start */
+.gridview {
+    display:flex;
+    flex-wrap: wrap;
+    width:100%;
+    margin-bottom: 30rpx;
+}
+
+.gridview-item {
+    width:25%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    font-size:12px;
+    box-sizing:border-box;
+    padding-bottom:10px;
+    padding-top:10px
+}
+.gridview-item_bg{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+.gridview-item_img{
+    width:100rpx;
+    height:100rpx;
+    border-radius: 50rpx;
+}
+.gridview-item_txt{
+    padding-top:20rpx;
+    width: 120rpx;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap; 
+    text-align: center 
+}
+
+.gridview-item:before {
+    content: " ";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    bottom: 0;
+    border-right: 1px solid #d9d9d9;
+    color: #d9d9d9;
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+} 
+ .gridview-item:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid #d9d9d9;
+    color: #d9d9d9;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+} 
+.gridview-item:active {
+    background-color: #ECECEC;
+} 
+/* 两列列表样式 end */
+
+/* 头部店面样式 */
+
+.head{
+  width: 100%;
+  background: #3baaff;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  color: white;
+}
+.head-content{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.headimg{
+  width:170rpx;
+  height:170rpx;
+  display:block;
+  border-radius: 50%;
+  margin-right: 25rpx;
+  margin-left: 15rpx;
+  float:left;
+}
+.headright{
+  display: flex;
+  flex-direction: column
+}
+
+.headtop{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-bottom: 10rpx;
+}
+
+.title{
+  margin-right: 10px;
+  font-size: 35rpx;
+}
+.headmid{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+   font-size: 25rpx;
+}
+.headmid-status{
+  font-size: 20rpx;
+  background:#FF9C35; 
+  margin-left: 10rpx;
+  padding: 5rpx;
+}
+
+.headbot{
+  margin-top: 15rpx;
+  font-size: 25rpx;
+}
+
+.star-icon{
+  float:left;
+  color:#FF9C35;
+  font-size:30rpx;
+}
+.discount{
+  margin: 25rpx;
+  font-size: 25rpx;
+  color: white;
+
+}
+.discount_head{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.discout-txt{
+  margin-top: 10rpx;
+  flex: 1;
+}
+
+.jiantou-icon{
+  margin-left: 10rpx;
+  font-size:40rpx;
+}
+
+swiper{
+  height: 300rpx;
+  width: 100%;
+}
+.img{
+  height: 100%;
+  width: 100%;
+}
+
+.model-txt{
+  flex: 1;
+  padding-left: 25rpx;
+  color: black;
+  font-size: 35rpx;
+}
+
+.fengxiang-icon{
+  color:#999999;
+  font-size:30rpx;
+  margin-right: 15rpx;
+}
+
+.content{
+  background: white;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 1rpx;
+  font-size: 30rpx;
+}
+.label-txt{
+  flex: 1;
+  color: #979696;
+}
+.gray{
+  background: #f2f2f2;
+}
+
+.left-icon{
+  margin-left: 20rpx;
+  margin-right: 10rpx;
+  color:#3baaff;
+  font-size:30rpx;
+}
+
+.right-icon{
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+  color:#3baaff;
+  font-size:40rpx;
+}
+
+.peisong-label{
+  margin-top: 15rpx;
+  background: white;
+  width: 100%;
+  padding: 10rpx 10rpx 10rpx 25rpx;
+  color: black;
+  font-size: 35rpx;
+}
+.peisong-content{
+  background: white;
+  padding: 25rpx;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  margin-bottom: 40px;
+  font-size: 30rpx;
+}
+.peisong-txt{
+  padding-left: 15rpx;
+  flex: 1;
+  color: #979696;
+  font-size: 30rpx;
+}
+
+/* 分享按钮 */
+.share{
+  background: none !important;
+  color: #999999 !important;
+}
+.share::after{
+  border: none;
+}
+

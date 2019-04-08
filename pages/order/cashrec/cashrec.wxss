@@ -1,0 +1,73 @@
+.top-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.head_img {
+  margin-top: 20px;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 65rpx;
+}
+
+.head_txt {
+  padding-top: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.out-frame{
+  background: white;
+  margin: 10px;
+  padding: 5px;
+}
+.money{
+  background: #f2f2f2;
+  height: 60px;
+  display: flex;
+  align-items: center
+}
+.money-text{
+  padding-left: 10px;
+  flex: 1;
+  color: #999999;
+}
+.plus-icon{
+  float:left;
+  margin-left: 25rpx;
+  margin-right: 10px;
+  color:#FF9C35;
+  font-size:46rpx;
+}
+
+.operate-bar{
+  z-index: 1001; 
+  position: fixed;
+  bottom: 0px;
+  height:55px;
+  width:100%;
+  display: flex;
+}
+
+.zongji{
+  width:75%;
+  padding-left: 15px;
+  background:#f2f2f2;
+  color: #c01818;
+  height: 100%; 
+  display:flex;
+  align-items: center;
+}
+
+.submit-btn{
+  height:100%;
+  background:#c01818;
+  color: white;
+  width:25%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}

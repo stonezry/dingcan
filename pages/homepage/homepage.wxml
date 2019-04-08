@@ -1,0 +1,110 @@
+<scroll-view class="container">
+
+  <!-- 头部-->
+
+  <view class='head'>
+    <view class='head-content'>
+
+      <image class='headimg' src='{{storeInfo.headimg}}'></image>
+      <view class='headright'>
+        <view class='headtop'>
+          <text class='title'>{{storeInfo.storename}}</text>
+          <view class="star_list">
+            <block wx:for='{{storeInfo.star}}' wx:key='index'>
+              <i class='iconfont icon-xingxing_xuanzhong star-icon'></i>
+            </block>
+          </view>
+        </view>
+        <!-- 配送范围,店家营业状态-->
+        <view class='headmid'>
+          <text class='peisong'>{{storeInfo.peisong}}</text>
+          <view class='headmid-status'>
+            {{storeInfo.status == 1?'营业中':'已休息'}}
+          </view>
+        </view>
+
+        <!-- 公告-->
+        <view class='headbot'>
+          <text class='peisong'>公告: {{storeInfo.peisong}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 活动-->
+    <view class='discount' wx:if="{{storeInfo.discountMsg.length > 0}}">
+
+      <block wx:for='{{storeInfo.discountMsg}}' wx:key='index'>
+        <view class='discount_head' wx:if="{{index == 0}}">
+          <view class='discout-txt'>
+            <label class='activity_jian'>减</label>
+            {{storeInfo.discountMsg[index]}}
+          </view>
+          <view bindtap='extandto' class='discout_num' data-extand='{{extand}}'>{{storeInfo.discountMsg.length}}个优惠</view>
+          <i class="iconfont jiantou-icon {{extand?'icon-shangjiantou':'icon-xiajiantou'}}"></i>
+        </view>
+        <view class='discout-txt' wx:elif="{{extand}}">
+          <label class='activity_jian'>减</label>
+          {{storeInfo.discountMsg[index]}}
+        </view>
+      </block>
+    </view>
+
+  </view>
+  <!-- 门店图片-->
+  <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <swiper-item wx:for="{{ storeInfo.imgs }}" wx:key="id">
+      <image class='img' src="{{ item }}" mode="aspectFill" />
+    </swiper-item>
+  </swiper>
+
+  <!-- 功能导航-->
+  <view class="gridview" style='background:white;'>
+    <view class="gridview-item" wx:for="{{menus}}" wx:key="id">
+      <view class='gridview-item_bg' bindtap='clickto' data-id='{{item.id}}'>
+        <image class='gridview-item_img' src="{{ item.img }}" />
+        <view class='gridview-item_txt'>{{item.title}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='content'>
+    <text class='model-txt'>商家信息</text>
+
+    <button class='share' id="shareBtn" open-type="share">
+      <i class='iconfont icon-fenxiang fengxiang-icon'></i>
+      <text style='font-size:25rpx;'>分享</text>
+    </button>
+
+
+  </view>
+
+  <view class='content' hover-class='gray' bindtap="jumptomap">
+    <i class='iconfont icon-weizhi left-icon'></i>
+    <text class='label-txt'>{{storeInfo.address}}</text>
+    <i class='iconfont icon-youjiantou right-icon'></i>
+  </view>
+  <view class='content' hover-class='gray' bindtap='tel'>
+    <i class='iconfont icon-dianhua left-icon'></i>
+    <text class='label-txt'>{{storeInfo.phone}}</text>
+    <i class='iconfont icon-youjiantou right-icon'></i>
+  </view>
+  <view class='content'>
+    <i class='iconfont icon-shijian left-icon'></i>
+    <text class='label-txt'>营业时间:{{storeInfo.yingye_time}}</text>
+  </view>
+  <view class='content'>
+    <i class='iconfont icon-weixin left-icon'></i>
+    <text class='label-txt'>微信:{{storeInfo.weixin}}</text>
+  </view>
+  <view class='content'>
+    <i class='iconfont icon-qq left-icon'></i>
+    <text class='label-txt'>QQ:{{storeInfo.qq}}</text>
+  </view>
+
+  <view class='peisong-label'>配送信息</view>
+  <view class='peisong-content'>
+    <label class='activity_jian'>商家配送</label>
+    <text class='peisong-txt'>准时必达,专业配送,提供高品质的送餐服务,配送费3元</text>
+  </view>
+
+</scroll-view>

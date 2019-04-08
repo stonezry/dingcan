@@ -1,0 +1,36 @@
+<!--pages/order/list/list.wxml-->
+<view>
+  <view class='go-center' style='margin-top:10px'>
+    <view class='tab-box'>
+      <view bindtap='changeTab' data-index="0" class="go-center {{tabIndex==0?'active-color':'unactive-color'}}" style='width:50%'>点餐</view>
+      <view bindtap='changeTab' data-index="1" class="go-center {{tabIndex==1?'active-color':'unactive-color'}}" style='width:50%'>外卖</view>
+      <!-- <view bindtap='changeTab' data-index="2" class="go-center {{tabIndex==2?'active-color':'unactive-color'}}" style='width:33.3%'>预约</view> -->
+    </view>
+  </view>
+
+  <scroll-view wx:if='{{orderlist && orderlist.length > 0}}' scroll-y="true" class='list-menu'>
+    <view class='content-list' wx:for="{{orderlist}}" wx:key="unique">
+      <view class='item-top'>
+        <view class='order-name'>订单号:{{item.orderid}}</view>
+        <text style='color:#909090'>已支付</text>
+      </view>
+      <view class='item-top'>
+        <view wx:if='{{tabIndex == 0}}'>取餐/桌号:</view>
+        <view wx:if='{{tabIndex == 1}}'>送餐状态:</view>
+        <text class='pay-right-money' wx:if='{{tabIndex == 0}}'>{{item.getorder}}</text>
+        <text class='pay-right-money' wx:if='{{tabIndex == 1}}'>等待商家接单...</text>
+      </view>
+      <view class='pay-right'>
+        <view>共{{item.number}}件商品,实付</view>
+        <text class='pay-right-money'>¥{{item.paymoney}}</text>
+      </view>
+      <button class='btn' bindtap='toDetail' data-id='{{item.orderid}}'>订单详情</button>
+    </view>
+  </scroll-view>
+  
+  <view class='go-center-v' style="margin-top:100px" wx:else>
+    <i class="iconfont icon-yudiancan0101 dindgan-i"></i>
+    <view class='go-center note-btn'>目前没有订单</view>
+  </view>
+  
+</view>

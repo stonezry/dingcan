@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/homepage/homepage",
+    "pages/orderlist/orderlist",
+    "pages/item/item",
+    "pages/profile/profile",
+    "pages/menulist/menulist",
+    "pages/order/balance/balance",
+    "pages/order/detail/detail",
+    "pages/order/outerdetail/outerdetail",
+    "pages/order/outorder/outorder",
+    "pages/order/cashrec/cashrec"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#3baaff",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "点餐",
+    "backgroundColor": "#f8f9fb",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#3baaff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "images/home_s.png",
+        "iconPath": "images/home.png",
+        "pagePath": "pages/homepage/homepage",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/order_s.png",
+        "iconPath": "images/order.png",
+        "pagePath": "pages/orderlist/orderlist",
+        "text": "订单"
+      },
+      {
+        "selectedIconPath": "images/mine_s.png",
+        "iconPath": "images/mine.png",
+        "pagePath": "pages/profile/profile",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "downloadFile": 20000
+  },
+  "debug": false,
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于确定您的点餐地点"
+    }
+  }
+}
